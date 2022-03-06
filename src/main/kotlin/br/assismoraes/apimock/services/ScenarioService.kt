@@ -14,4 +14,8 @@ class ScenarioService {
     fun save(scenario: Scenario): Scenario {
         return scenarioRepository.save(scenario)
     }
+
+    fun findAll(): List<Scenario> {
+        return scenarioRepository.findAll()
+    }
 }

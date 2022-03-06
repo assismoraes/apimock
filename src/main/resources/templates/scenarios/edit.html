@@ -1,0 +1,19 @@
+<!doctype html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create scenario</title>
+</head>
+<body>
+    <h1>Scenario</h1>
+
+    <form action="#" th:action="@{/scenarios}" th:object="${scenario}" method="post">
+        <input type="text" th:field="*{name}" />
+        <input type="submit" value="Save">
+    </form>
+
+</body>
+</html>
