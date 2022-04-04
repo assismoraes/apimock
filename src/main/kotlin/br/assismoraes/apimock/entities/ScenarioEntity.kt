@@ -17,10 +17,18 @@ class ScenarioEntity(
     var id: Long? = null,
 
     @Column(name = "name")
-    var name: String? = null
+    var name: String? = null,
+
+    @Column(name = "method")
+    var method: String,
+
+    @Column(name = "path")
+    var path: String,
 )
 
 fun ScenarioEntity.toDomain() = Scenario(
-    id  = this.id,
-    name = this.name!!
+        id  = this.id,
+        name = this.name!!,
+        method = this.method,
+        path = this.path
 )

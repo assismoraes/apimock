@@ -11,11 +11,12 @@ class ScenarioService {
     @Autowired
     private lateinit var scenarioRepository: ScenarioRepository
 
-    fun save(scenario: Scenario): Scenario {
-        return scenarioRepository.save(scenario)
-    }
+    fun save(scenario: Scenario) = scenarioRepository.save(scenario)
 
-    fun findAll(): List<Scenario> {
-        return scenarioRepository.findAll()
-    }
+    fun findAll(): List<Scenario> = scenarioRepository.findAll()
+
+    fun findById(id: Long) = scenarioRepository.findById(id)
+
+    fun findByMethodAndPath(method: String, path: String) = scenarioRepository.findByMethodAndPath(method, path)
+
 }

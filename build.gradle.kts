@@ -18,7 +18,6 @@ repositories {
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.6.3")
-	implementation("org.springframework.boot:spring-boot-starter-thymeleaf:2.6.3")
 	implementation("org.springframework.boot:spring-boot-starter-web:2.6.3")
 	implementation("org.springframework.boot:spring-boot-starter-validation:2.6.3")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
@@ -26,7 +25,6 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	runtimeOnly("org.postgresql:postgresql")
-	implementation("com.github.tomakehurst:wiremock:2.27.2")
 
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
