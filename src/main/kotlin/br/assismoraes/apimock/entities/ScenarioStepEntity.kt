@@ -24,10 +24,6 @@ class ScenarioStepEntity(
         @Column(name = "response_status")
         var responseStatus: Int,
 
-//        @OneToOne
-//        @JoinColumn(name = "next_id")
-//        var next: ScenarioStepEntity? = null,
-
         @Column(name = "request_headers")
         var requestHeaders: String,
 
