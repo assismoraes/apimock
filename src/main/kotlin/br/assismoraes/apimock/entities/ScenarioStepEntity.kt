@@ -36,6 +36,9 @@ class ScenarioStepEntity(
         @Column(name = "status")
         var status: String,
 
+        @Column(name = "sleep_time")
+        var sleepTime: Long
+
         ) {
         fun toDomain() = ScenarioStep(
                 id = this.id,
@@ -46,7 +49,8 @@ class ScenarioStepEntity(
                 requestHeaders = this.requestHeaders,
                 responseHeaders = this.responseHeaders,
                 sequence = this.sequence,
-                status = this.status
+                status = this.status,
+                sleepTime = this.sleepTime
         )
 
 }

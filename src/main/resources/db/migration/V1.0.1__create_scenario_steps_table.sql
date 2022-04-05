@@ -8,6 +8,7 @@ CREATE TABLE scenario_steps (
 	response_headers varchar(1000) NOT NULL,
 	sequence integer NOT NULL,
 	status varchar(100) NOT NULL,
+	sleep_time integer NOT NULL,
 
 	CONSTRAINT scenario_steps_pkey PRIMARY KEY (id),
 	CONSTRAINT fk_scenario_id FOREIGN KEY (scenario_id) REFERENCES scenarios (id)

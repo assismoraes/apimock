@@ -29,7 +29,10 @@ data class ScenarioStepRequest(
         val responseHeaders: String,
 
         @JsonProperty("sequence")
-        val sequence: Int
+        val sequence: Int,
+
+        @JsonProperty("sleep_time")
+        val sleepTime: Long
 
         ) {}
 
@@ -44,5 +47,6 @@ fun ScenarioStepRequest.toDomain(scenario: Scenario) = ScenarioStep(
         requestHeaders = this.requestHeaders,
         responseHeaders = this.responseHeaders,
         sequence = this.sequence,
-        status = StepStatus.IDLE.name
+        status = StepStatus.IDLE.name,
+        sleepTime = this.sleepTime
 )

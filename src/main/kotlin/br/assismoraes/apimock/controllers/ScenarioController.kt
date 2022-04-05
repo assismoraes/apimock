@@ -40,4 +40,13 @@ class ScenarioController {
         return ResponseEntity.ok("OK")
     }
 
+    @PostMapping("{scenarioId}/reset")
+    fun reset(
+            @PathVariable("scenarioId") scenarioId: Long
+    ): ResponseEntity<Any> {
+        val scenario = scenarioService.findById(scenarioId)
+        scenarioStepService.reset(scenario)
+        return ResponseEntity.ok("Reset done")
+    }
+
 }

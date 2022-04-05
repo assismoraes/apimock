@@ -12,6 +12,7 @@ data class ScenarioStep(
         var responseHeaders: String,
         var sequence: Int,
         var status: String,
+        var sleepTime: Long = 0
 ) {
     fun toEntity() = ScenarioStepEntity(
             id = this.id,
@@ -22,7 +23,8 @@ data class ScenarioStep(
             requestHeaders = this.requestHeaders,
             responseHeaders = this.responseHeaders,
             sequence = this.sequence,
-            status = this.status
+            status = this.status,
+            sleepTime = this.sleepTime
     )
 }
 

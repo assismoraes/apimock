@@ -29,11 +29,18 @@ class ScenarioStepService {
             if(it.status == StepStatus.IDLE.name) {
                 it.status = StepStatus.EXECUTED.name
                 save(it)
+                Thread.sleep(it.sleepTime)
                 return ResponseEntity.status(it.responseStatus).header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE).body(it.responseBody)
             }
         }
 
         return ResponseEntity.badRequest().body("Request was not defined")
+    }
+
+    fun reset(scenario: Scenario) {
+        var steps = findByScenario(scenario)
+        steps.map { it.status = StepStatus.IDLE.name }
+        scenarioStepRepository.saveAll(steps)
     }
 
 }
